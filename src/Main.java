@@ -1,54 +1,44 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("===================== ДЗ 2 =============================");
+        System.out.println("===================== ДЗ 3 =============================");
         System.out.println("------------------- Задание 1 --------------------------");
 
-        int age2 = 21;
+        int age4 = 32;
 
-        if (age2 >= 18) {
-            System.out.println("Поздравляю, ты стал взрослым!");
-        } else System.out.println("Ты еще не стал взрослым! Надо немного подождать!");
+        boolean goToKinderGarten = age4 >= 2 && age4 <= 6;
+        boolean goToSchool = age4 >= 7 && age4 <= 18;
+        boolean goToUniversity = age4 > 18 && age4 <= 24;
+        boolean goToWork = age4 > 24;
+
+        if (goToKinderGarten) System.out.println("Если возраст человека равен " + age4 + ", то ему нужно ходить в детский сад");
+        if (goToSchool) System.out.println("Если возраст человека равен " + age4 + ", то ему нужно ходить в школу");
+        if (goToUniversity) System.out.println("Если возраст человека равен " + age4 + ", то ему нужно ходить в университет");
+        if (goToWork) System.out.println("Если возраст человека равен " + age4 + ", то ему нужно ходить на работу");
 
         System.out.println("------------------- Задание 2 --------------------------");
 
-        int age3 = 22;
+        int age5 = 13;
 
-        if (age2 >= 7 && age2 < 18) {
-            System.out.println("Еще надо поучиться в школе!");
-        } else {
-            if (age2 >= 18 && age2 < 24) {
-                System.out.println("Университет это круто!");
-            } else System.out.println("Студентческие годы прошли (((, пора искать первую работу!");
-        }
+        if (age5 <5 ) System.out.println("Ребенку меньше 5 лет, он не может кататься на аттракционе");
+        if (age5 >=5 && age5 <=14) System.out.println("Ребенку больше 5 но меньше 14 лет, " +
+                "может кататься только в сопровождении взрослого. Если взрослого нет, то кататься нельзя");
+        if (age5 > 14) System.out.println("Ребенку больше больше 14 лет, он может кататься без сопровождения взрослого");
+
         System.out.println("------------------- Задание 3 --------------------------");
 
-        int totalSeats1 = 102; // Всего мест в вагоне
-        int totalSeatPlace1 = 60; // Всего сидячих мест
-        int totalStandingPlace1 = totalSeats1 - totalSeatPlace1; // Всего стоячих мест
-        int enteredPass1 = 77; // Зашло пассажиров
+        int one = 9;
+        int two = 8;
+        int three = 1;
 
-        System.out.println("Всего мест в вагоне " + totalSeats1);
-        System.out.println("Зашло в вагон " + enteredPass1 + " пассажиров");
+        int maxNumber = one;
 
-//      Считаем, что вагон пустой
-
-        if (enteredPass1 > totalSeatPlace1) {      // Если вошедших > сидячих мест, сидячие места заполняем, остаток передаем на стоячие места
-
-            int occupiedStandingPlace1 = enteredPass1 - totalSeatPlace1; // сколько реально занято стоячих мест
-            System.out.println("Сидячих мест " + totalSeatPlace1 + ", занято " + totalSeatPlace1 + ", свободно 0");
-
-            if (occupiedStandingPlace1 <= totalStandingPlace1) { // Проверяем, если <= общего числа стоячих мест
-                System.out.println("Стоячих мест " + totalStandingPlace1 + ", занято " + occupiedStandingPlace1 +
-                        ", свободно " + (totalStandingPlace1 - occupiedStandingPlace1));
-            } else {                                          // если > , заполняем полностью стоячие места, остаток выводим как лишних пассажиров
-                System.out.println("Стоячих мест " + totalStandingPlace1 + ", занято " + totalStandingPlace1 +
-                        ", свободно 0, " + "нет мест для " + Math.abs(totalStandingPlace1 - occupiedStandingPlace1) + " пассажира/ов");
-            }
-        } else {
-            System.out.println("Сидячих мест " + totalSeatPlace1 + ", занято " + enteredPass1 + ", свободно " +
-                    (totalSeatPlace1 - enteredPass1));
-            System.out.println("Стоячих мест " + totalStandingPlace1 + ", занято 0, свободно " + totalStandingPlace1);
+        if ( two > maxNumber ) {
+            maxNumber = two;
         }
+        if (three > maxNumber ) {
+            maxNumber = three;
+        }
+        System.out.println("Максимальное число "+maxNumber);
     }
 }
